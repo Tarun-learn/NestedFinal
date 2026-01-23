@@ -11,8 +11,8 @@ class StdentModelClass(models.Model):
 
     
     sname = models.CharField(max_length=100)
-    std=models.CharField(max_length=20, db_index = True)
-    sub=models.CharField(max_length=50, db_index = True)
+    std=models.CharField(max_length=20)
+    sub=models.CharField(max_length=50)
 
 
 
