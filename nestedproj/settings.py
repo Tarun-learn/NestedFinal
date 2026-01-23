@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config             #.env file ne use karva mate decouple package
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,15 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0v0$=nrlz3%qg4$oc)(*-(12b^=u25)p9vkdts6)x@^r@1x9&1'
+SECRET_KEY = config('SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True           #local server mate true rakhvanu.
-DEBUG = False            # online servare  mate false karvu pade. live server par backend ni error show na kare .
-ALLOWED_HOSTS = ["nestedfinalrender.onrender.com",
-                 "localhost", 
-                 "127.0.0.1",
-                ]                 # badha j host kari shake, 
+DEBUG = config('DEBUG', cast=bool)            # online servare  mate false karvu pade. live server par backend ni error show na kare .
+ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')              # badha j host kari shake, 
 
 # ALLOWED_HOSTS = ['*']    #specific aa website j host kari shake.
 
@@ -89,14 +87,14 @@ WSGI_APPLICATION = 'nestedproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # 'ENGINE' : 'django.db.backends.mysql',
-        # 'NAME' : 'newnestedapidb2',           #  dtabase name          #dtabase name
-        # 'USER' : 'root',
-        # 'PASSWORD': '0987654321',
-        # 'HOST':'127.0.0.1',
-        # 'PORT': '3306',
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': BASE_DIR / config('DB_NAME'),
+        # 'ENGINE' :  config('DB_ENGINE'),
+        # 'NAME' : config('DB_NAME'),         #  dtabase name          #dtabase name
+        # 'USER' : 'config('DB_USER')
+        # 'PASSWORD': config('DB_PASSWORD'),
+        # 'HOST':config('DB_HOST'),
+        # 'PORT': 'config('DB_POSRT'),
     }
 }
 
