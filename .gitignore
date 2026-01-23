@@ -1,5 +1,9 @@
 
 
+
+__pycache__/
+*.pyc
+
 #django 
 
 mysql
@@ -36,4 +40,8 @@ mysql_data/
 #Enviornment Variable
 
 .env
+
+
+
+
 

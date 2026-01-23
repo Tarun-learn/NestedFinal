@@ -21,10 +21,12 @@ from nestedapp.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('nestedapp.urls')),  # student URL
-    path('student/', include('nestedapp.urls')),  # student URL
-    path('teacher/', include('nestedapp.urls')),  # teacher URL
-    path('allser/', include('nestedapp.urls')),   # all serializer URL
+    # path('student/', include('nestedapp.urls')),  # student URL
+    # path('teacher/', include('nestedapp.urls')),  # teacher URL
+    # path('allser/', include('nestedapp.urls')),   # all serializer URL
     
-    path('',home,name='home'),
+    path('api/', include('nestedapp.urls')),   #apiroute
+
+    path('',home,name='home'),    # for render test home page 
 
 ]
