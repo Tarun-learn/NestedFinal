@@ -1,0 +1,39 @@
+
+
+#django 
+
+mysql
+media/staticfiles
+
+#vs code
+.vscode/
+
+#os 
+.DS_Store
+
+
+#Virtual Enviornmet.
+apienv/
+env/
+venv/
+ENV/
+
+#django.
+
+*.log
+media/
+staticfiles/
+
+
+#MySQL
+
+*.MySQL
+mysql_data/
+*.frm
+*.MyD
+
+
+#Enviornment Variable
+
+.env
+
