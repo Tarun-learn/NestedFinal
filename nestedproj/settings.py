@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0v0$=nrlz3%qg4$oc)(*-(12b^=u25)p9vkdts6)x@^r@1x9&1
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True           #local server mate true rakhvanu.
 DEBUG = False            # online servare  mate false karvu pade. live server par backend ni error show na kare .
-ALLOWED_HOSTS = ['nestedapi.onrender.com']                 # badha j host kari shake 
+ALLOWED_HOSTS = ['nestedapi.onrender.com',"localhost", "127.0.0.1"]                 # badha j host kari shake, 
 
 # ALLOWED_HOSTS = ['*']    #specific aa website j host kari shake.
 
