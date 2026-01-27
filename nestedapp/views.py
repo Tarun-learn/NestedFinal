@@ -9,8 +9,7 @@ from django.http import HttpResponse
 
 from rest_framework.filters import OrderingFilter
 
-# Create your views here.
-
+# Create your views here.ls 
 
 #homepae
 

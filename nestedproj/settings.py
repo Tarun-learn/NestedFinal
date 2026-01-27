@@ -23,12 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY') 
 
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True           #local server mate true rakhvanu.
-DEBUG = config('DEBUG', cast=bool)            # online servare  mate false karvu pade. live server par backend ni error show na kare .
-ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')              # badha j host kari shake, 
+# DEBUG = True                                                                #local server mate true rakhvanu.
+DEBUG = config('DEBUG', cast=bool)                                             # online servare  mate false karvu pade. live server par backend ni error show na kare .
+ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')                             # badha j host kari shake, 
+
+
 
 # ALLOWED_HOSTS = ['*']    #specific aa website j host kari shake.
+
 
 #csrd =cross-site request forgrey . security purpose. 
 CSRF_TRUSTED_ORIGINS = [
