@@ -23,7 +23,9 @@ class TeacherModelClass(models.Model):
     # sub = models.CharField(max_length=50)
     teacher = models. ForeignKey(StdentModelClass, related_name= 'teacher',  on_delete= models.CASCADE)                                 #student.teachername.all() all data fetch karvaa mate.
 
-
+    def __str__(self):
+        return self.tname
+    
 
 
 
