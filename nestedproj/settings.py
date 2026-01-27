@@ -26,8 +26,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True                                                                #local server mate true rakhvanu.
-DEBUG = config('DEBUG', cast=bool, default= False)                                             # online servare  mate false karvu pade. live server par backend ni error show na kare .
+DEBUG = True                                                                #local server mate true rakhvanu.
+# DEBUG = config('DEBUG', cast=bool, default= False)                                             # online servare  mate false karvu pade. live server par backend ni error show na kare .
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')                             # badha j host kari shake, 
 
 
