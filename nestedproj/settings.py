@@ -92,8 +92,8 @@ WSGI_APPLICATION = 'nestedproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': BASE_DIR / config('DB_NAME'),
+        'ENGINE': config('DB_ENGINE',default='django.db.backends.sqlite3'),
+        'NAME': BASE_DIR / config('DB_NAME',default='db.sqlite3'),
         # 'ENGINE' :  config('DB_ENGINE'),
         # 'NAME' : config('DB_NAME'),         #  dtabase name          #dtabase name
         # 'USER' : 'config('DB_USER')
