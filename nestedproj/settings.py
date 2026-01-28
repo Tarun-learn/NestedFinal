@@ -10,8 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
+import dj_database_url
+
 from pathlib import Path
 from decouple import config             #.env file ne use karva mate decouple package
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,7 +95,7 @@ WSGI_APPLICATION = 'nestedproj.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    # 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
         # 'ENGINE': config('DB_ENGINE',default='django.db.backends.sqlite3'),
         # 'NAME': BASE_DIR / config('DB_NAME',default='db.sqlite3'),
         # 'ENGINE' :  config('DB_ENGINE'),
@@ -109,15 +113,17 @@ DATABASES = {
         # 'HOST': 'localhost',
         # 'PORT': '5432'
 
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': config('DB_NAME'),
+        # 'USER': config('DB_USER'),
+        # 'PASSWORD': config('DB_PASSWORD'),
+        # 'HOST': config('DB_HOST', default='localhost'),
+        # 'PORT': config('DB_PORT', default='5432'),
+
 
     }
-}
+
+DATABASES["default"] = dj_database_url.parse("DATABASE_URL")
 
 
 # Password validation
