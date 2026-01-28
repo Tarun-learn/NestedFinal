@@ -30,8 +30,8 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True                                                                #local server mate true rakhvanu.
-# DEBUG = config('DEBUG', cast=bool, default= False)                                             # online servare  mate false karvu pade. live server par backend ni error show na kare .
+                                                              #local server mate true rakhvanu.
+DEBUG = config('DEBUG', cast=bool, default= False)                                             # online servare  mate false karvu pade. live server par backend ni error show na kare .
 ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')                             # badha j host kari shake, 
 
 
@@ -94,36 +94,12 @@ WSGI_APPLICATION = 'nestedproj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+
+
+
 DATABASES = {
-    # 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-        # 'ENGINE': config('DB_ENGINE',default='django.db.backends.sqlite3'),
-        # 'NAME': BASE_DIR / config('DB_NAME',default='db.sqlite3'),
-        # 'ENGINE' :  config('DB_ENGINE'),
-        # 'NAME' : config('DB_NAME'),         #  dtabase name          #dtabase name
-        # 'USER' : 'config('DB_USER')
-        # 'PASSWORD': config('DB_PASSWORD'),
-        # 'HOST':config('DB_HOST'),
-        # 'PORT': 'config('DB_POSRT'),
-
-        #for local server
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'newdb',
-        # 'USER': 'mom',
-        # 'PASSWORD': 'mom456',
-        # 'HOST': 'localhost',
-        # 'PORT': '5432'
-
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': config('DB_NAME'),
-        # 'USER': config('DB_USER'),
-        # 'PASSWORD': config('DB_PASSWORD'),
-        # 'HOST': config('DB_HOST', default='localhost'),
-        # 'PORT': config('DB_PORT', default='5432'),
-
-
-    }
-
-DATABASES["default"] = dj_database_url.parse("DATABASE_URL")
+    'default' : dj_database_url.parse(config('DATABASE_URL'))
+}
 
 
 # Password validation
